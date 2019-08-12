@@ -1,0 +1,31 @@
+{
+  "name": "anydoor",
+  "version": "1.0.0",
+  "description": "nodeJs static web server",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fix": "eslint --fix .",
+    "lint": "eslint ."
+  },
+  "pre-commit": [
+    "fix",
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh1122/anydoor.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gh1122/anydoor/issues"
+  },
+  "homepage": "https://github.com/gh1122/anydoor#readme",
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "eslint": "^6.1.0",
+    "pre-commit": "^1.2.2"
+  },
+  "dependencies": {}
+}
