@@ -8,10 +8,10 @@
     "fix": "eslint --fix .",
     "lint": "eslint ."
   },
-  "pre-commit": [
-    "fix",
-    "lint"
-  ],
+  // "pre-commit": [
+  //   "fix",
+  //   "lint"
+  // ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gh1122/anydoor.git"

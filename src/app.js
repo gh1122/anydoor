@@ -3,7 +3,7 @@ const conf = require('./config/defaultConfig');
 const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
-const promisify = require('util').promisify;
+// const promisify = require('util').promisify;
 
 const server = http.createServer((req, res) => {
   const url = req.url;
