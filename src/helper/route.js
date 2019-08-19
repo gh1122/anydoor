@@ -13,7 +13,10 @@ const template = Handlebars.compile(source.toString());
 const mine = require('./mime');
 
 const compress = require('./compress');
-// const iconv = require('iconv-lite');
+
+const range = require('./range');
+
+// const isFresh = require('./cache');
 
 module.exports = async function(req, res, filePath) {
   try {
@@ -21,11 +24,27 @@ module.exports = async function(req, res, filePath) {
 
     if (stats.isFile()) {
       const contentType = `${mine(filePath)};charset=utf-8`;
-      res.statusCode = 200;
+
       res.setHeader('Content-Type', contentType);
+      // if (isFresh(stats, req, res)) {
+      //   res.statusCode = 304;
+      //   res.end();
+      //   return;
+      // }
 
-      let rs = fs.createReadStream(filePath);
+      let rs;
+      const { code, start, end } = range(stat.size, req, res);
 
+      if (code == 200) {
+        res.statusCode = 200;
+        rs = fs.createReadStream(filePath);
+      } else {
+        res.statusCode = 206;
+        rs = fs.createReadStream(filePath, {
+          start,
+          end
+        });
+      }
       if (filePath.match(conf.compress)) {
         rs = compress(rs, req, res);
       }

@@ -8,7 +8,6 @@
     "fix": "eslint --fix .",
     "lint": "eslint ."
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gh1122/anydoor.git"
@@ -25,7 +24,9 @@
     "pre-commit": "^1.2.2"
   },
   "dependencies": {
+    "curl": "^0.1.4",
     "handlebars": "^4.1.2",
-    "iconv-lite": "^0.5.0"
+    "iconv-lite": "^0.5.0",
+    "yargs": "^13.3.0"
   }
 }

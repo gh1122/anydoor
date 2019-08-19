@@ -11,6 +11,15 @@ const path = require('path');
 const route = require('./helper/route');
 // console.log(chalk.green(process.cwd())); //返回当前工作目录
 // console.log(chalk.green(__dirname)); //源码所在的目录
+
+// class Server {
+//   constructor(config) {
+//     this.conf = Object.assign({}.conf, config);
+//   }
+//   start() {
+//    }
+// }
+
 const server = http.createServer((req, res) => {
   const url = req.url;
   const filePath = path.join(conf.root, url);
