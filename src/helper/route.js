@@ -65,7 +65,6 @@ module.exports = async function(req, res, filePath, conf) {
       res.end(template(data));
     }
   } catch (ex) {
-    console.error(ex);
     res.statusCode = 404;
     res.setHeader('Content-Type', 'text/plain');
     res.end(`${filePath} is not a directory or file\n ${ex.toString()}`);
