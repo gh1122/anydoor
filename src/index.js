@@ -1,5 +1,5 @@
 const yargs = require('yargs');
-
+const Server = require('./app');
 const argv = yargs
   .usage('anywhere [options]')
   .option('p', {
@@ -9,7 +9,8 @@ const argv = yargs
   })
   .option('h', {
     alias: 'hostname',
-    describe: 'host'
+    describe: 'host',
+    default: '127.0.0.1'
   })
   .option('d', {
     alias: 'root',
@@ -18,3 +19,6 @@ const argv = yargs
   .version()
   .alias('v', 'version')
   .help().argv;
+
+const server = new Server(argv);
+server.start();

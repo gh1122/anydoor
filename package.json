@@ -1,8 +1,11 @@
 {
   "name": "anydoor",
-  "version": "1.0.0",
-  "description": "nodeJs static web server",
-  "main": ".eslintrc.js",
+  "version": "1.0.1",
+  "description": "nodejs static web server",
+  "main": "src/app.js",
+  "bin": {
+    "anydoor": "bin/anydoor"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "fix": "eslint --fix .",
@@ -21,6 +24,7 @@
   "devDependencies": {
     "chalk": "^2.4.2",
     "eslint": "^6.1.0",
+    "opn": "^6.0.0",
     "pre-commit": "^1.2.2"
   },
   "dependencies": {

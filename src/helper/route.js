@@ -3,7 +3,7 @@ const promisify = require('util').promisify;
 const path = require('path');
 const stat = promisify(fs.stat);
 const readdir = promisify(fs.readdir);
-const conf = require('../config/defaultConfig');
+// const conf = require('../config/defaultConfig');
 const Handlebars = require('handlebars');
 // const chalk = require('chalk');
 const tplPath = path.join(__dirname, '../template/dir.tpl');
@@ -18,7 +18,7 @@ const range = require('./range');
 
 // const isFresh = require('./cache');
 
-module.exports = async function(req, res, filePath) {
+module.exports = async function(req, res, filePath, conf) {
   try {
     const stats = await stat(filePath);
 
@@ -65,7 +65,6 @@ module.exports = async function(req, res, filePath) {
       res.end(template(data));
     }
   } catch (err) {
-    console.log(err);
     res.statusCode = 404;
     res.setHeader('Content-Type', 'text/plain;charset=utf-8');
     res.end(err);
