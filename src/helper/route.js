@@ -64,10 +64,10 @@ module.exports = async function(req, res, filePath, conf) {
       };
       res.end(template(data));
     }
-  } catch (err) {
+  } catch (ex) {
+    console.error(ex);
     res.statusCode = 404;
-    res.setHeader('Content-Type', 'text/plain;charset=utf-8');
-    res.end(err);
-    return;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end(`${filePath} is not a directory or file\n ${ex.toString()}`);
   }
 };

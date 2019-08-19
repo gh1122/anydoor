@@ -1,6 +1,6 @@
 {
-  "name": "anydoor",
-  "version": "1.0.1",
+  "name": "anydoor-gh",
+  "version": "1.0.4",
   "description": "nodejs static web server",
   "main": "src/app.js",
   "bin": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/gh1122/anydoor#readme",
   "devDependencies": {
+    "anydoor": "^0.1.1",
     "chalk": "^2.4.2",
     "eslint": "^6.1.0",
     "opn": "^6.0.0",
